@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const UlAnswers = styled.ul`
   color: red;
@@ -10,7 +11,16 @@ const Chat = styled.div`
   grid-gap: 50px;
 `;
 
-const MessageDisplay = ({ messages, answers }) => {
+const MessageDisplay = ({ messages }) => {
+  const [answers, setAnswers] = useState([]);
+
+  useEffect(() => {
+    return () =>
+      setTimeout(() => {
+        setAnswers((prevState) => [...prevState, "Хех, Здарова!"]);
+      }, 1000);
+  }, [messages]);
+
   return (
     <Chat>
       <ul>

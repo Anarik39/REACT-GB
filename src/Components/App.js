@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import MessageDisplay from "./MessageDisplay/MessageDisplay";
 import MessageForm from "./MessageForm/MessageForm";
 
 const Wrapper = styled.div`
@@ -14,9 +16,12 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  const [messageList, setMessageList] = useState([]);
+
   return (
     <Wrapper>
-      <MessageForm />
+      <MessageForm setFunc={setMessageList} />
+      <MessageDisplay messages={messageList} />
     </Wrapper>
   );
 }
