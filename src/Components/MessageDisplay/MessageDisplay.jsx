@@ -1,14 +1,18 @@
-import "./MessageDisplay.scss";
-
 import styled from "styled-components";
 
 const UlAnswers = styled.ul`
   color: red;
 `;
 
+const Chat = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+`;
+
 const MessageDisplay = ({ messages, answers }) => {
   return (
-    <div className="chat">
+    <Chat>
       <ul>
         {messages.map((el, id) => (
           <li key={id}>{el.text}</li>
@@ -19,7 +23,7 @@ const MessageDisplay = ({ messages, answers }) => {
           <li key={id}>{el}</li>
         ))}
       </UlAnswers>
-    </div>
+    </Chat>
   );
 };
 
