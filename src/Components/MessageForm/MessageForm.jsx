@@ -14,24 +14,23 @@ const Button = styled.button`
 
 const MessageForm = ({ setFunc }) => {
   const [message, setMessage] = useState("");
+  const [idmessage, setIdmessage] = useState(1);
 
   const submitForm = (event) => {
     event.preventDefault();
     if (message) {
       setFunc((prevState) => [
         ...prevState,
-        {
-          text: message,
-          author: "ya",
-          status: false,
-        },
+        { id: idmessage, text: message, author: "ya" },
       ]);
+      setIdmessage((prevState) => prevState + 1);
       setMessage("");
     }
   };
 
   return (
     <form onSubmit={submitForm}>
+      <h1>Мессенджер</h1>
       <Input
         type="text"
         value={message}

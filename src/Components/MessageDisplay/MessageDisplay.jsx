@@ -24,8 +24,8 @@ const MessageDisplay = ({ messages }) => {
   return (
     <Chat>
       <ul>
-        {messages.map((el, id) => (
-          <li key={id}>{el.text}</li>
+        {messages.map((el) => (
+          <li key={el.id}>{el.text}</li>
         ))}
       </ul>
       <UlAnswers>
