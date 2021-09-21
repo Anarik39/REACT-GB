@@ -1,28 +1,35 @@
 import { useState } from "react";
 import styled from "styled-components";
-import MessageDisplay from "./MessageDisplay/MessageDisplay";
-import MessageForm from "./MessageForm/MessageForm";
+import ChatItem from "./ChatItem/ChatItem";
+import ChatForm from "./ChatForm/ChatForm";
+import ChatsList from "./ChatsList/ChatsList";
 
 const Wrapper = styled.div`
-  background-color: #282c34;
-  min-height: 100vh;
-  color: white;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 270px 1fr;
+`;
+const Header = styled.header`
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px 0;
+  font-size: 30px;
 `;
 
 function App() {
   const [messageList, setMessageList] = useState([]);
 
   return (
-    <Wrapper>
-      <MessageForm setFunc={setMessageList} />
-      <MessageDisplay messages={messageList} />
-    </Wrapper>
+    <>
+      <Header>МЕССЕНДЖЕР</Header>
+      <Wrapper>
+        <ChatsList />
+        <ChatItem messages={messageList} />
+      </Wrapper>
+      <ChatForm setFunc={setMessageList} />
+    </>
   );
 }
 
