@@ -17,16 +17,13 @@ const ChatForm = ({ setFunc }) => {
 
   useEffect(() => {
     refInput?.current.focus();
-  }, []);
+  });
 
   const submitForm = (event) => {
     event.preventDefault();
     refInput.current.focus();
     if (message) {
-      setFunc((prevState) => [
-        ...prevState,
-        { id: idmessage, text: message, author: "ya" },
-      ]);
+      setFunc((prevState) => [...prevState, { id: idmessage, text: message, author: "ya" }]);
       setIdmessage((prevState) => prevState + 1);
       setMessage("");
     }

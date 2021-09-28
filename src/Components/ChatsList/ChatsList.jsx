@@ -1,28 +1,26 @@
-import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { List, ListItem, ListItemText } from "@material-ui/core/";
+import { List, ListItem } from "@material-ui/core/";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
     maxWidth: 200,
+    position: "fixed",
+    top: "30%",
+    left: "400px",
   },
 });
 
-const ChatsList = () => {
+const ChatsList = ({ chats }) => {
   const classes = useStyles();
-  const [chats, setChats] = useState([
-    { id: 1, name: "Egor" },
-    { id: 2, name: "Nikita" },
-    { id: 3, name: "Anar" },
-    { id: 4, name: "Petr" },
-  ]);
+
   return (
     <div className={classes.root}>
       <List>
         {chats.map((el) => (
           <ListItem button key={el.id}>
-            <ListItemText primary={el.name} />
+            <Link to={`/users/${el.id}`}>{el.name}</Link>
           </ListItem>
         ))}
       </List>
