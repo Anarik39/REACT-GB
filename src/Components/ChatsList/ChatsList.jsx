@@ -4,10 +4,8 @@ import styled from "styled-components";
 
 const Users = styled.div`
   width: 100%;
-  maxwidth: 200;
-  position: fixed;
-  top: 30%;
-  left: 400px;
+  max-width: 200px;
+  margin-top: 100px;
 `;
 
 const ButtonDelete = styled.button`

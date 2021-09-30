@@ -3,17 +3,13 @@ const useStyles = makeStyles({
   wrapper: {
     maxWidth: "600px",
     width: "100%",
-    zIndex: 1000,
-    position: "fixed",
-    bottom: 50,
     display: "flex",
-    left: "50%",
-    transform: "translate(-50%, 0)",
+    marginLeft: "auto",
   },
   input: {
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     border: 0,
-    borderRadius: "4px 0 0 4px",
+    borderRadius: "10px 0 0 0 ",
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     width: "100%",
     "& label.Mui-focused": {
@@ -29,9 +25,9 @@ const useStyles = makeStyles({
     },
   },
   btn: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    background: "linear-gradient(225deg, #FE6B8B 30%, #FF8E53 90%)",
     border: 0,
-    borderRadius: "0 40px 40px 0",
+    borderRadius: "0 10px 0 0",
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     height: 56,
     padding: "0 30px",

@@ -1,4 +1,6 @@
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { profileAction } from "../../actions/profileAction";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -7,8 +9,31 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
+const Input = styled.input`
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+`;
 const PageProfile = () => {
-  return <Wrapper>Профиль</Wrapper>;
+  const dispatch = useDispatch();
+  const { profileChecked } = useSelector((state) => state);
+
+  const handlerUserCheck = () => {
+    dispatch(profileAction(!profileChecked));
+  };
+
+  return (
+    <Wrapper>
+      <label>
+        <Input
+          type="checkbox"
+          checked={profileChecked}
+          value={profileChecked}
+          onChange={handlerUserCheck}
+        />
+        <span>Профиль</span>
+      </label>
+    </Wrapper>
+  );
 };
 export default PageProfile;

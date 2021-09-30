@@ -15,7 +15,6 @@ const styles = makeStyles({
 });
 
 const Chat = styled.div`
-  margin: 100px auto 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
@@ -23,9 +22,10 @@ const Chat = styled.div`
   width: 100%;
   background: white;
   color: black;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   min-height: 60vh;
   height: 100%;
+  margin-left: auto;
 `;
 
 const ChatItem = ({ messages, chats }) => {

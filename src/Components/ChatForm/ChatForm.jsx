@@ -17,7 +17,7 @@ const ChatForm = ({ setFunc }) => {
 
   useEffect(() => {
     refInput?.current.focus();
-  });
+  }, []);
 
   const submitForm = (event) => {
     event.preventDefault();

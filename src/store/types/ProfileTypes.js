@@ -1,0 +1,2 @@
+const EDIT_PROFILE = "EDIT_PROFILE";
+export { EDIT_PROFILE };
