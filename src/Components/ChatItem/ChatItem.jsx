@@ -9,6 +9,7 @@ const styles = makeStyles({
     justifyContent: "center",
   },
   ulAnswers: {
+    justifyContent: "center",
     color: "red",
   },
 });
@@ -28,7 +29,7 @@ const Chat = styled.div`
 `;
 
 const ChatItem = ({ messages, chats }) => {
-  const { userId } = useParams();
+  const { userName } = useParams();
   const [answers, setAnswers] = useState([]);
   const classes = styles();
 
@@ -40,7 +41,7 @@ const ChatItem = ({ messages, chats }) => {
     }
   }, [messages]);
 
-  if (!chats[userId]) {
+  if (!chats.find((user) => user.name === userName)) {
     return <Redirect to="/users" />;
   }
 
@@ -55,7 +56,7 @@ const ChatItem = ({ messages, chats }) => {
       </List>
       <List>
         {answers.map((el, id) => (
-          <ListItem className={(classes.item, classes.ulAnswers)} key={id}>
+          <ListItem className={classes.ulAnswers} key={id}>
             {el}
           </ListItem>
         ))}

@@ -39,7 +39,9 @@ const ChatsList = ({ chats, setChats }) => {
             <ButtonDelete type="button" onClick={() => deleteUserDialog(el)}>
               X
             </ButtonDelete>
-            <Link to={`/users/${el.id}`}>{el.name}</Link>
+            <Link to={`/users/${el.name}`}>
+              {el.name.charAt(0).toUpperCase() + el.name.slice(1)}
+            </Link>
           </ListItem>
         ))}
       </List>

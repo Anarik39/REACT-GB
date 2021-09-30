@@ -3,7 +3,7 @@ import PageChats from "./Pages/PageChats/PageChats";
 import PageProfile from "./Pages/PageProfile/PageProfile";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -30,7 +30,7 @@ const HeaderWrap = styled.div`
 
 function App() {
   return (
-    <Router>
+    <>
       <Header>
         <Wrapper>
           <HeaderWrap>
@@ -48,7 +48,7 @@ function App() {
           </Switch>
         </Wrapper>
       </main>
-    </Router>
+    </>
   );
 }
 
