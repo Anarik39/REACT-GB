@@ -1,19 +1,23 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { TextField, Button } from "@material-ui/core";
-import styles from "./ChatFormStyled";
+import styles from "./SendMessageFormStyled";
 import { PropTypes } from "prop-types";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { sendMessageActions } from "../../actions/messagesActions";
+import { useParams } from "react-router";
 
 const SvgSend = styled.svg`
   width: 50px;
   max-height: 50px;
 `;
 
-const ChatForm = ({ setFunc }) => {
+const ChatForm = () => {
   const classes = styles();
   const [message, setMessage] = useState("");
-  const [idmessage, setIdmessage] = useState(1);
   const refInput = useRef(null);
+  const dispatch = useDispatch();
+  const { userId } = useParams();
 
   useEffect(() => {
     refInput?.current.focus();
@@ -23,8 +27,7 @@ const ChatForm = ({ setFunc }) => {
     event.preventDefault();
     refInput.current.focus();
     if (message) {
-      setFunc((prevState) => [...prevState, { id: idmessage, text: message, author: "ya" }]);
-      setIdmessage((prevState) => prevState + 1);
+      dispatch(sendMessageActions({ message, userId }));
       setMessage("");
     }
   };

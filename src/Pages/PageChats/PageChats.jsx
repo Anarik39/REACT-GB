@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import ChatsList from "../../Components/ChatsList/ChatsList";
-import ChatItem from "../../Components/ChatItem/ChatItem";
-import ChatForm from "../../Components/ChatForm/ChatForm";
+import ChatMessages from "../../Components/ChatMessages/ChatMessages";
+import SendMessageForm from "../../Components/SendMessageForm/SendMessageForm";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
   display: flex;
@@ -15,22 +15,16 @@ const Chat = styled.div`
 `;
 
 const Chats = () => {
-  const [messageList, setMessageList] = useState([]);
-  const [chats, setChats] = useState([
-    { id: 1, name: "egor", messages: [] },
-    { id: 2, name: "nikita", messages: [] },
-    { id: 3, name: "anar", messages: [] },
-    { id: 4, name: "petr", messages: [] },
-  ]);
+  const chats = useSelector((state) => state.chatsReducer);
 
   return (
     <Container>
-      <ChatsList chats={chats} setChats={setChats} />
+      <ChatsList chats={chats} />
       <Switch>
-        <Route exact path="/users/:userName">
+        <Route exact path="/users/:userId">
           <Chat>
-            <ChatForm setFunc={setMessageList} />
-            <ChatItem messages={messageList} chats={chats} />
+            <SendMessageForm />
+            <ChatMessages chats={chats} />
           </Chat>
         </Route>
       </Switch>

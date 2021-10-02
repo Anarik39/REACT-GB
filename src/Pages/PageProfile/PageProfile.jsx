@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { profileAction } from "../../actions/profileAction";
+import { profileAction } from "../../actions/profileActions";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -16,7 +16,7 @@ const Input = styled.input`
 `;
 const PageProfile = () => {
   const dispatch = useDispatch();
-  const { profileChecked } = useSelector((state) => state);
+  const profileChecked = useSelector((state) => state.profileReducer.profileChecked);
 
   const handlerUserCheck = () => {
     dispatch(profileAction(!profileChecked));

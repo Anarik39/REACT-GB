@@ -23,3 +23,8 @@ a {
   color: white;
   text-decoration: none;
 }
+
+label,
+input[type="checkbox"] {
+  cursor: pointer;
+}

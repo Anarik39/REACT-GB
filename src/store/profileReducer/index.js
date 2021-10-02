@@ -1,4 +1,4 @@
-import { EDIT_PROFILE } from "./types/ProfileTypes";
+import { EDIT_PROFILE } from "../types/ProfileTypes";
 
 const initialState = {
   profileChecked: false,
