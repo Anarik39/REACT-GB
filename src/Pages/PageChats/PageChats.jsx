@@ -15,7 +15,7 @@ const Chat = styled.div`
 `;
 
 const Chats = () => {
-  const chats = useSelector((state) => state.chatsReducer);
+  const chats = useSelector((state) => state.chatsReducer.chats);
 
   return (
     <Container>

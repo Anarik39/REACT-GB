@@ -5,7 +5,7 @@ export const deleteChatAction = (chat) => ({
   payload: chat,
 });
 
-export const addChatAction = (chat) => ({
+export const addChatAction = (name) => ({
   type: ADD_CHAT,
-  payload: chat,
+  payload: name,
 });

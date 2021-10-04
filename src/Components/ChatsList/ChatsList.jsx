@@ -1,5 +1,6 @@
 import { List, ListItem, TextField, makeStyles } from "@material-ui/core/";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -66,6 +67,7 @@ const useStyles = makeStyles({
 const ChatsList = ({ chats }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const id = useSelector((store) => store.chatsReducer.id) + 1;
 
   const [newChatName, setNewChatName] = useState("");
 
@@ -76,9 +78,7 @@ const ChatsList = ({ chats }) => {
 
   const addUserChat = () => {
     if (newChatName) {
-      const id = Math.random().toString(36).substring(2);
-      const newChat = { id: id, name: newChatName };
-      dispatch(addChatAction(newChat));
+      dispatch(addChatAction(newChatName));
       dispatch(addMessagesActions(id));
     }
   };
