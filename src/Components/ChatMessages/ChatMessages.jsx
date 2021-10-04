@@ -7,18 +7,22 @@ import { useSelector } from "react-redux";
 
 const styles = makeStyles({
   item: {
-    justifyContent: "center",
+    justifyContent: "flex-start",
+    flexDirection: "column",
+    wordWrap: "break-word",
+    alignItems: "normal",
   },
   ulAnswers: {
-    justifyContent: "center",
+    justifyContent: "flex-end",
     color: "red",
+    wordWrap: "break-word",
+    alignItems: "normal",
   },
 });
 
 const Chat = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
+  grid-template-columns: 300px 300px;
   max-width: 600px;
   width: 100%;
   background: white;
