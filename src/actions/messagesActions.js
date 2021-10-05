@@ -13,10 +13,12 @@ const addMessagesActions = (userId) => ({
   payload: userId,
 });
 
-export const botMessageActions = (userId) => (dispatch) => {
-  setTimeout(() => {
-    dispatch(sendMessageActions({ message: "Хех, Здарова!", userId, author: "bot" }));
-  }, 1000);
+export const botMessageActions = (userId, messages) => (dispatch) => {
+  if (messages[messages?.length - 1]?.author === "ya" && messages?.length !== 0) {
+    setTimeout(() => {
+      dispatch(sendMessageActions({ message: "Хех, Здарова!", userId, author: "bot" }));
+    }, 1000);
+  }
 };
 
 export { sendMessageActions, deleteMessagesActions, addMessagesActions };

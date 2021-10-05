@@ -34,13 +34,11 @@ const ChatMessages = ({ chats }) => {
 
   const messages = useSelector((state) => state.messagesReducer[userId]);
 
-  if (messages[messages.length - 1]?.author === "ya" && messages.length !== 0) {
-    dispatch(botMessageActions(userId));
-  }
-
   if (!chats.find((user) => String(user.id) === userId)) {
     return <Redirect to="/users" />;
   }
+
+  dispatch(botMessageActions(userId, messages));
 
   return (
     <Chat>
