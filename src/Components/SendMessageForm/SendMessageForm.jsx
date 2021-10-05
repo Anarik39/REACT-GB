@@ -27,7 +27,7 @@ const ChatForm = () => {
     event.preventDefault();
     refInput.current.focus();
     if (message) {
-      dispatch(sendMessageActions({ message, userId }));
+      dispatch(sendMessageActions({ message, userId, author: "ya" }));
       setMessage("");
     }
   };

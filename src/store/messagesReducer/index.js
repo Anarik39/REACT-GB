@@ -10,8 +10,8 @@ const initialState = {
 const messagesReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SEND_MESSAGE:
-      const { message, userId } = payload;
-      return { ...state, [userId]: [...state[userId], { text: message, author: "ya" }] };
+      const { message, userId, author } = payload;
+      return { ...state, [userId]: [...state[userId], { text: message, author: author }] };
     case DELETE_MESSAGES:
       delete state[payload];
       return { ...state };
