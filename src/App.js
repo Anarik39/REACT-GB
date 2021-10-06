@@ -34,7 +34,7 @@ function App() {
       <Header>
         <Wrapper>
           <HeaderWrap>
-            <Link to="/users">МЕССЕНДЖЕР</Link>
+            <Link to="/chats">МЕССЕНДЖЕР</Link>
             <Link to="/">Профиль</Link>
           </HeaderWrap>
         </Wrapper>
@@ -43,7 +43,7 @@ function App() {
         <Wrapper>
           <Switch>
             <Route exact path="/" component={PageProfile}></Route>
-            <Route path="/users" component={PageChats}></Route>
+            <Route path="/chats" component={PageChats}></Route>
             <Route component={PageNotFound}></Route>
           </Switch>
         </Wrapper>

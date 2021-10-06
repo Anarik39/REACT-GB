@@ -21,7 +21,7 @@ const Chats = () => {
     <Container>
       <ChatsList chats={chats} />
       <Switch>
-        <Route exact path="/users/:userId">
+        <Route exact path="/chats/:userId">
           <Chat>
             <SendMessageForm />
             <ChatMessages chats={chats} />

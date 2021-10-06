@@ -105,7 +105,7 @@ const ChatsList = ({ chats }) => {
             <ButtonDelete type="button" onClick={() => deleteUserChat(el)}>
               X
             </ButtonDelete>
-            <Link to={`/users/${el.id}`}>{el.name.charAt(0).toUpperCase() + el.name.slice(1)}</Link>
+            <Link to={`/chats/${el.id}`}>{el.name.charAt(0).toUpperCase() + el.name.slice(1)}</Link>
           </ListItem>
         ))}
       </List>
