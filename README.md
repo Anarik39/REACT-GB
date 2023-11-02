@@ -1,6 +1,6 @@
-# Personal expenses and calculator
+# Personal chat
 
-SPA application. Made a chat on react
+SPA application. Made a chat on React
 
 Stack: React, Redux, Router, material-ui, styled-components
 
