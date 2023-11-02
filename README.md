@@ -1,6 +1,6 @@
 # Personal chat
 
-SPA application. Made a chat on React
+SPA application on React. Implemented chat
 
 Stack: React, Redux, Router, material-ui, styled-components
 
